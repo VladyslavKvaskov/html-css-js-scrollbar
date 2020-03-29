@@ -8,8 +8,8 @@ body::-webkit-scrollbar {
 }
 section{
   height: 100vh;
-  background: blue;
-  color: #fff;
+  background: #f5f5fa;
+  color: #000;
 }
 .vk-scrollbar{
   width: 20px;
