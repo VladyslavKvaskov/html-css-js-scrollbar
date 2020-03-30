@@ -59,9 +59,11 @@ window.onresize = () =>{
   checkScreenForScroll();
 }
 sc_up.onclick = () => {
+  document.documentElement.scrollTop = 0;
   document.body.scrollTop = 0;
 }
 sc_down.onclick = () => {
+    document.documentElement.scrollTop = (document.documentElement.scrollHeight - window.innerHeight);;
   document.body.scrollTop = (document.documentElement.scrollHeight - window.innerHeight);
 }
 sc_thumb_up.ontransitionend = () => {
@@ -79,6 +81,7 @@ function moveScrollbarThumbToCursorPosition(e){
   } else if (percent > 100){
     percent = 100;
   }
+  document.documentElement.scrollTop = (document.documentElement.scrollHeight - window.innerHeight) * (percent / 100);
   document.body.scrollTop = (document.documentElement.scrollHeight - window.innerHeight) * (percent / 100);
 }
 function checkScreenForScroll(){
